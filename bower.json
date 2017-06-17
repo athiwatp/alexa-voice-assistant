@@ -1,0 +1,33 @@
+{
+  "name": "voice-assistant",
+  "description": "A JavaScript powered voice assistant.",
+  "main": "index.js",
+  "authors": [
+    "Robert Anthonie C. Soriano"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Voice",
+    "Voice",
+    "Assistant",
+    "Alexa",
+    "Echo",
+    "JavaScript",
+    "Siri"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^2.3.4",
+    "artyom.js": "^1.0.5",
+    "moment": "^2.18.1",
+    "axios": "^0.16.2"
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Voice Assistant</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="static/css/vuetify.min.css">
+</head>
+
+<body>
+    <v-app id="voiceApp">
+        <v-toolbar>
+            <v-toolbar-title class="white--text">My Voice Assistant</v-toolbar-title>
+        </v-toolbar>
+        <main>
+            <v-container fluid>
+                <v-layout row wrap>
+                    <v-flex xs6>
+                        <v-card class="secondary">
+                            <v-card-row class="blue darken-1">
+                                <v-card-title>
+                                    <span class="white--text">Available Commands</span>
+                                </v-card-title>
+                            </v-card-row>
+                            <v-card-text>
+                                <v-list>
+                                    <v-list-item v-for="(c, i) in all_commands" :key="i">
+                                        <v-list-tile avatar>
+                                            <v-list-tile-action>
+                                                <v-icon class="white--text">keyboard_voice</v-icon>
+                                            </v-list-tile-action>
+                                            <v-list-tile-content>
+                                                <v-list-tile-title v-text="c.name" class="white--text"></v-list-tile-title>
+                                            </v-list-tile-content>
+                                        </v-list-tile>
+                                    </v-list-item>
+                                </v-list>
+                            </v-card-text>
+                        </v-card>
+                    </v-flex>
+                    <v-flex xs6>
+                        <v-card class="secondary">
+                            <v-card-row class="blue darken-1">
+                                <v-card-title>
+                                    <span class="white--text">Recognized Text</span>
+                                </v-card-title>
+                            </v-card-row>
+                            <v-card-text>
+                                <h4 class="white--text">{{recognized_text}}</h4>
+                            </v-card-text>
+                        </v-card>
+                    </v-flex>
+                </v-layout>
+            </v-container>
+        </main>
+        <v-footer></v-footer>
+    </v-app>
+    <!-- Libraries -->
+    <script src="lib/vue/dist/vue.js" type="text/javascript"></script>
+    <script src="static/js/vuetify.min.js" type="text/javascript"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/artyom.js/build-vanilla/artyom.js"></script>
+    <script src="lib/axios/dist/axios.min.js"></script>
+    <script src="app.js" type="text/javascript"></script>
+    <script src="voice-commands.js" type="text/javascript"></script>
+</body>
+
+</html>
